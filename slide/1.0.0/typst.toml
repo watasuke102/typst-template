@@ -1,0 +1,8 @@
+[package]
+name = "slide"
+version = "1.0.0"
+entrypoint = "lib.typ"
+authors = ["watasuke102"]
+license = "MIT or MIT-SUSHI-WARE"
+description = "Slide template"
+

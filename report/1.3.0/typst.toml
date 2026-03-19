@@ -1,0 +1,8 @@
+[package]
+name = "report"
+version = "1.3.0"
+entrypoint = "lib.typ"
+authors = ["watasuke102"]
+license = "MIT or MIT-SUSHI-WARE"
+description = "Report template"
+
