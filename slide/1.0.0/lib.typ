@@ -2,8 +2,6 @@
 #import "@watasuke102/slide:1.0.0": *
 #show: slides.with()
 */
-// FIXME: current templates always add empty page at last
-//        (do not give slide contents by array to fix this!)
 #let gray0 = luma(98%)
 #let gray1 = luma(80%)
 #let gray2 = luma(65%)
@@ -132,6 +130,7 @@
   )
 }
 #let template_bio(icon_size: 10cm, body) = {
+  pagebreak(weak: true)
   set page(fill: green)
   set text(fill: black)
   set list(
@@ -154,9 +153,9 @@
       #body
     ]),
   ))
-  pagebreak()
 }
 #let template_section(name) = {
+  pagebreak(weak: true)
   section_counter.step()
   context {
     if name != "" {
@@ -202,7 +201,6 @@
       ),
     )
   }
-  pagebreak()
 }
 #let template_two_column(
   left_inset: true,
@@ -212,6 +210,7 @@
   left,
   right,
 ) = {
+  pagebreak(weak: true)
   set page(margin: 0pt)
   grid(
     rows: 100%,
@@ -230,9 +229,9 @@
       right,
     ),
   )
-  pagebreak()
 }
 #let template_center(center_contents, upper: none, caption: none) = {
+  pagebreak(weak: true)
   grid(
     columns: 1fr,
     rows: (auto, 1fr, auto),
@@ -241,10 +240,9 @@
     align(center + horizon, center_contents),
     align(center + bottom, caption),
   )
-  pagebreak()
 }
 #let template_basic(body) = {
+  pagebreak(weak: true)
   body
-  pagebreak()
 }
 
