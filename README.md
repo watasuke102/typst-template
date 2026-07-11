@@ -13,8 +13,9 @@ Or clone this repository to `~/.local/share/typst/packages`. See [typst/packages
 If you want to use report template, create `properties.typ` under `report/<version>` like this:
 
 ```typ
-#let student_name = "田中太郎"
-#let student_id   = "12345"
+#let student_name    = "田中太郎"
+#let student_name_en = "TANAKA Taro"
+#let student_id      = "12345"
 ```
 
 ## License

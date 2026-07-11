@@ -11,7 +11,7 @@
 }
 
 // template
-#let template(title, doc, kind: "report") = {
+#let template(title, doc, kind: "report", lang: "ja") = {
   set text(font: "Rounded M+ 1c")
   show raw.where(block: true): s => {
     set text(font: "Moralerspace Krypton HWJPDOCNF")
@@ -49,15 +49,20 @@
     set page(height: auto)
     doc
   } else if kind == "report" {
+    let sections = if lang == "en" {
+      ("Submit Date", "Student ID", "Name", student_name_en)
+    } else {
+      ("提出日", "学籍番号", "名前", student_name)
+    }
     [
       #align(center, text(size: 18pt, weight: "bold", title))
 
       #align(right, grid(
         columns: 2,
         gutter: 4pt,
-        [*提出日*], datetime.today().display(),
-        [*学籍番号*], student_id,
-        [*名前*], student_name,
+        strong(sections.at(0)), datetime.today().display(),
+        strong(sections.at(1)), student_id,
+        strong(sections.at(2)), sections.at(3),
       ))
     ]
     doc
