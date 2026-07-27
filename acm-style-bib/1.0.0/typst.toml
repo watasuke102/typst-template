@@ -1,0 +1,7 @@
+[package]
+name = "acm-style-bib"
+version = "1.0.0"
+entrypoint = "lib.typ"
+authors = ["watasuke102"]
+license = "MIT or MIT-SUSHI-WARE"
+description = "Use `association-for-computing-machinery.csl` for #cite and #bibliography in Typst."
