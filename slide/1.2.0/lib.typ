@@ -1,5 +1,5 @@
 /*
-#import "@watasuke102/slide:1.1.0": *
+#import "@watasuke102/slide:1.2.0": *
 #show: slides.with()
 */
 #import "@preview/itemize:0.2.0" as el
