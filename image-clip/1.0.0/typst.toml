@@ -1,0 +1,9 @@
+[package]
+name = "image-clip"
+version = "1.0.0"
+entrypoint = "lib.typ"
+authors = ["watasuke102"]
+license = "MIT"
+description = "Clip raster images by integer pixel insets using Rust and WebAssembly"
+compiler = "0.15.0"
+exclude = ["target", "src", "tests", "Cargo.toml", "Cargo.lock", "build.sh"]
