@@ -18,6 +18,8 @@
 #let purple = rgb("#c678dd")
 #let cyan = rgb("#56b6c2")
 
+#let watasuke102_icon = read("icon.jpg", encoding: none)
+
 #let main_margin = (x: 1.1cm, y: 1.0cm)
 #let primary_font_size = 26pt
 #let slides(aspect_ratio: "16-9", page_number: "current-only", doc) = {
@@ -96,7 +98,9 @@
     indent: 0pt,
   )
   show footnote.entry: it => {
-    set text(size: 0.7em)
+    let text_size = 0.7em
+    set text(size: text_size)
+    show raw: set text(size: text_size)
     // stack() may exceeds the page margin
     grid(
       columns: (auto, 1fr),
@@ -138,7 +142,7 @@
         stroke: none,
         column-gutter: 8pt,
         [],
-        image("icon.jpg", width: 100pt),
+        image(watasuke102_icon, width: 100pt),
         align(left, right_contents),
         [],
         table.cell(colspan: 4, text(fill: gray4, lower)),
@@ -177,7 +181,7 @@
   )
   align(horizon + center, grid(
     columns: (1fr, 1fr),
-    image("icon.jpg", height: icon_size),
+    image(watasuke102_icon, height: icon_size),
     align(left, box(width: 100%)[
       #set par(spacing: 10pt)
       #move(dx: -4pt, text(size: 52pt, weight: "bold")[わたすけ])
@@ -187,6 +191,17 @@
       #line(stroke: 2pt + black, length: 85%)
       #body
     ]),
+  ))
+}
+#let template_bio_with_humanform(body) = {
+  pagebreak(weak: true)
+  align(horizon, grid(
+    rows: 2,
+    columns: 2,
+    column-gutter: 1cm,
+    image(watasuke102_icon, width: 5.3cm),
+    grid.cell(rowspan: 2, body),
+    align(bottom, image("humanForm.png", width: 5.3cm)),
   ))
 }
 #let template_section(name) = {
